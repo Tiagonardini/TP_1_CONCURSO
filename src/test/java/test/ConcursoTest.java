@@ -12,7 +12,7 @@ public class ConcursoTest {
     public void test01 (){
         var tiago = new Participante("44664727", "Tiago Nardini");
         Concurso unConcurso = new Concurso("Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
-        Inscripcion.inscribirAEnUnConcurso(unConcurso, tiago);
+        Inscripcion.inscribirAEnUnConcurso(unConcurso, tiago, LocalDate.of(2024,3, 16 ));
         assertTrue(unConcurso.participanteInscripto(tiago));
         assertEquals(1, unConcurso.cantidadInscriptos());
     }
@@ -21,7 +21,7 @@ public class ConcursoTest {
     public void test02(){
         var tiago = new Participante("44664727", "Tiago Nardini");
         Concurso unConcurso = new Concurso("Concurso Camiseta de Boca", LocalDate.of(2024,3,17), LocalDate.of(2024, 3, 30));
-        Inscripcion.inscribirAEnUnConcurso(unConcurso, tiago);
+        Inscripcion.inscribirAEnUnConcurso(unConcurso, tiago, LocalDate.now());
         assertTrue(unConcurso.participanteInscripto(tiago));
         assertEquals(1, unConcurso.cantidadInscriptos());
     }
@@ -29,7 +29,7 @@ public class ConcursoTest {
     public void test03(){
         var tiago = new Participante("44664727", "Tiago Nardini");
         Concurso unConcurso = new Concurso("Concurso Camiseta de Boca", LocalDate.of(2024,3,20), LocalDate.of(2024, 3, 30));
-        Inscripcion.inscribirAEnUnConcurso(unConcurso, tiago);
+        Inscripcion.inscribirAEnUnConcurso(unConcurso, tiago, LocalDate.of(2024, 1, 2));
         assertFalse(unConcurso.participanteInscripto(tiago));
         assertEquals(0, unConcurso.cantidadInscriptos());
     }

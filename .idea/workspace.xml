@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="204fa788-80a3-44c9-b15a-de3622e8b87c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/ConcursoTest.java" afterDir="false" />
+    <list default="true" id="204fa788-80a3-44c9-b15a-de3622e8b87c" name="Changes" comment="tp de concurso">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/ConcursoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ConcursoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +53,7 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ConcursoTest.test03">
+  <component name="RunManager" selected="JUnit.ConcursoTest.test01">
     <configuration name="ConcursoTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP_Concurso" />
       <extension name="coverage">
@@ -69,6 +65,22 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.ConcursoTest" />
       <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcursoTest.test02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP_Concurso" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ConcursoTest" />
+      <option name="METHOD_NAME" value="test02" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,8 +104,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConcursoTest.test03" />
         <item itemvalue="JUnit.ConcursoTest.test01" />
+        <item itemvalue="JUnit.ConcursoTest.test02" />
+        <item itemvalue="JUnit.ConcursoTest.test03" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +126,20 @@
       <option name="presentableId" value="Default" />
       <updated>1710614665672</updated>
     </task>
+    <task id="LOCAL-00001" summary="tp de concurso">
+      <option name="closed" value="true" />
+      <created>1711315290078</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711315290078</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tp de concurso" />
+    <option name="LAST_COMMIT_MESSAGE" value="tp de concurso" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
