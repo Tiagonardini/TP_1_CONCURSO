@@ -1,14 +1,13 @@
 package clasesDeConcurso;
 
-import java.util.Objects;
-
 public class Participante {
-
-    private String dni;
+    private final Integer ID;
+    private Integer dni;
     private String nombre;
     private Integer puntosObtenidos;
 
-    public Participante(String dni, String nombre) {
+    public Participante(Integer id, int dni, String nombre) {
+        this.ID = id;
         this.dni = dni;
         this.nombre = nombre;
         this.puntosObtenidos = 0;
@@ -18,4 +17,7 @@ public class Participante {
     }
 
 
+    public Integer id() {
+        return this.ID;
+    }
 }

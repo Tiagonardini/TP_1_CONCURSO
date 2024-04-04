@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="204fa788-80a3-44c9-b15a-de3622e8b87c" name="Changes" comment="tp de concurso">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnDisco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Persistencia/PersistirDatos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Practica2/test/ConcursoTest1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/ConcursoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/ConcursoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/ConcursoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practica1/test/ConcursoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +24,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -41,11 +54,14 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "JUnit.ConcursoTest.executor": "Run",
+    "JUnit.ConcursoTest.test01 (1).executor": "Run",
     "JUnit.ConcursoTest.test01.executor": "Run",
+    "JUnit.ConcursoTest.test02 (1).executor": "Run",
+    "JUnit.ConcursoTest.test02.executor": "Run",
     "JUnit.ConcursoTest.test03.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "TP2",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/Tiago/IdeaProjects/TP_Concurso/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
@@ -53,7 +69,23 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ConcursoTest.test01">
+  <component name="RunManager" selected="JUnit.ConcursoTest.test03 (1)">
+    <configuration name="ConcursoTest.test01 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP_Concurso" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Practica1.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Practica1.test" />
+      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConcursoTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP_Concurso" />
       <extension name="coverage">
@@ -65,6 +97,22 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.ConcursoTest" />
       <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcursoTest.test02 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP_Concurso" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Practica1.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Practica1.test" />
+      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
+      <option name="METHOD_NAME" value="test02" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -86,16 +134,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConcursoTest.test03" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConcursoTest.test03 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP_Concurso" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="Practica1.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.ConcursoTest" />
+      <option name="PACKAGE_NAME" value="Practica1.test" />
+      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
       <option name="METHOD_NAME" value="test03" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -104,16 +152,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConcursoTest.test01" />
+        <item itemvalue="JUnit.ConcursoTest.test03 (1)" />
+        <item itemvalue="JUnit.ConcursoTest.test02 (1)" />
+        <item itemvalue="JUnit.ConcursoTest.test01 (1)" />
         <item itemvalue="JUnit.ConcursoTest.test02" />
-        <item itemvalue="JUnit.ConcursoTest.test03" />
+        <item itemvalue="JUnit.ConcursoTest.test01" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-78a6f59c" />
       </set>
     </attachedChunks>
   </component>
@@ -137,6 +187,17 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tp de concurso" />
     <option name="LAST_COMMIT_MESSAGE" value="tp de concurso" />
@@ -149,6 +210,15 @@
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.nio.file.NoSuchFileException" package="java.nio.file" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

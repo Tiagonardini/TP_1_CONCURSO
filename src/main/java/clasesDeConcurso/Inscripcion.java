@@ -1,38 +1,49 @@
 package clasesDeConcurso;
 
+import Persistencia.PersistirDatos;
+
+import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Inscripcion {
     private Participante participante;
     private Concurso concurso;
     private final LocalDate fechaDeInscripcion;
-    private Inscripcion(Participante participante, Concurso concurso, LocalDate fechaDeInscripto) {
+    private PersistirDatos memoria;
+    public Inscripcion(Participante participante, Concurso concurso, LocalDate fechaDeInscripto, PersistirDatos memoria) {
         this.participante = participante;
         this.concurso = concurso;
         this.fechaDeInscripcion = fechaDeInscripto;
+        this.memoria = memoria;
 
     }
-    public static void inscribirAEnUnConcurso (Concurso unConcurso, Participante unParticipante, LocalDate fechaDeInscripcion){
+    public void inscribirAEnUnConcurso (Concurso unConcurso, Participante unParticipante) throws IOException {
         if (!esFechaValidaParaInscripcion(unConcurso, fechaDeInscripcion)){
-            System.out.print("Se encuentra fuera del periodo de Inscripcion\n");
-        } else{
-            if (seInscribioElPrimerDia(unConcurso, fechaDeInscripcion)) {
-                unParticipante.modificarPuntaje();
-                System.out.print("Haz ganado 10 puntos\n");
-            }
-            var nuevaInscripcion = new Inscripcion(unParticipante, unConcurso, fechaDeInscripcion);
-            unConcurso.nuevaInscripcion(nuevaInscripcion);
-            System.out.print("La inscripcion se ha realizado con exito\n");
+            throw new RuntimeException("Se encuentra fuera del periodo de Inscripcion");
         }
-    }
-    private static boolean esFechaValidaParaInscripcion(Concurso unConcurso, LocalDate fechaDeInscripcion) {
-        return (!fechaDeInscripcion.isBefore(unConcurso.getFechaInicioDeInscripcion())) && (!fechaDeInscripcion.isAfter(unConcurso.getFechaFinDeInscripcion()));
-    }
+        if (seInscribioElPrimerDia(unConcurso, fechaDeInscripcion)) {
+            unParticipante.modificarPuntaje();
+            System.out.print("Haz ganado 10 puntos\n");
+        }
+        unConcurso.nuevaInscripcion(this);
+        System.out.print("La inscripcion se ha realizado con exito\n");
 
-    private static boolean seInscribioElPrimerDia(Concurso unConcurso, LocalDate fechaDeInscripcion){
+        memoria.guardar(unConcurso, unParticipante, this);
+    }
+    private boolean esFechaValidaParaInscripcion (Concurso unConcurso, LocalDate fechaDeInscripcion){
+            return (!fechaDeInscripcion.isBefore(unConcurso.getFechaInicioDeInscripcion())) && (!fechaDeInscripcion.isAfter(unConcurso.getFechaFinDeInscripcion()));
+    }
+    private boolean seInscribioElPrimerDia(Concurso unConcurso, LocalDate fechaDeInscripcion){
         return fechaDeInscripcion.isEqual(unConcurso.getFechaInicioDeInscripcion());
     }
     public boolean estaInscripto(Participante participante) {
         return this.participante.equals(participante);
+    }
+
+    public String diaEnQueSeInscribio() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return this.fechaDeInscripcion.format(formatter);
+
     }
 }

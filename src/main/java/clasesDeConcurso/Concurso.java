@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Concurso {
+    private final Integer ID;
     private final String nombre;
     private List<Inscripcion> inscriptos;
     private LocalDate fechaInicioDeInscripcion;
     private LocalDate fechaFinDeInscripcion;
-    public Concurso(String nombre, LocalDate fechaInicio, LocalDate fechaFin) {
+
+    public Concurso(Integer id, String nombre, LocalDate fechaInicio, LocalDate fechaFin) {
+        this.ID = id;
         this.nombre = nombre;
         this.inscriptos = new ArrayList<>();
         this.fechaInicioDeInscripcion = fechaInicio;
@@ -37,5 +40,9 @@ public class Concurso {
     }
     public LocalDate getFechaFinDeInscripcion() {
         return fechaFinDeInscripcion;
+    }
+
+    public Integer id() {
+        return this.ID;
     }
 }
