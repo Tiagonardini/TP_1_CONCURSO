@@ -1,4 +1,5 @@
 package Practica1.test;
+import Persistencia.DatosEnBase;
 import Persistencia.DatosEnDisco;
 import clasesDeConcurso.Concurso;
 import clasesDeConcurso.Inscripcion;
@@ -6,6 +7,7 @@ import clasesDeConcurso.Participante;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,5 +45,16 @@ public class ConcursoTest {
         inscripcion.inscribirAEnUnConcurso(unConcurso, tiago);
         assertFalse(unConcurso.participanteInscripto(tiago));
         assertEquals(0, unConcurso.cantidadInscriptos());
+    }
+    @Test
+    public  void testConBase01() throws IOException {
+        var memoriaEnBase = new DatosEnBase();
+        var participante1 = new Participante(4, 24098732, "Juan Rodriguez");
+        var concurso1 = new Concurso(4, "Camiseta de Independiente", LocalDate.of(2024, 4, 1), LocalDate.of(2024, 4, 30));
+        var inscripcion = new Inscripcion(participante1, concurso1, LocalDate.now(), memoriaEnBase);
+        inscripcion.inscribirAEnUnConcurso(concurso1, participante1);
+
+        assertTrue(concurso1.participanteInscripto(participante1));
+        assertEquals(1, concurso1.cantidadInscriptos());
     }
 }
