@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="204fa788-80a3-44c9-b15a-de3622e8b87c" name="Changes" comment="conectar codigo con base de datos">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Mail/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practica1/test/FakeDatos.java" afterDir="false" />
+    <list default="true" id="204fa788-80a3-44c9-b15a-de3622e8b87c" name="Changes" comment="envio del email al inscribir un participante y aplicar los fake objects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnDisco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnDisco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Persistencia/PersistirDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Persistencia/PersistirDatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Practica1/test/ConcursoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practica1/test/ConcursoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Practica1/test/FakeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practica1/test/FakeDatos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ConcursoTest.envioDeEmail.executor": "Run",
     "JUnit.ConcursoTest.executor": "Run",
-    "JUnit.ConcursoTest.pruebaFakeObjects.executor": "Run",
+    "JUnit.ConcursoTest.pruebaFakeObjects.executor": "Debug",
     "JUnit.ConcursoTest.test01 (1).executor": "Run",
     "JUnit.ConcursoTest.test01.executor": "Run",
     "JUnit.ConcursoTest.test02 (1).executor": "Run",
@@ -214,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712436251499</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="envio del email al inscribir un participante y aplicar los fake objects">
+      <option name="closed" value="true" />
+      <created>1712521747562</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712521747562</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,7 +252,8 @@
     <MESSAGE value="tp de concurso" />
     <MESSAGE value="agregar a notas de texto" />
     <MESSAGE value="conectar codigo con base de datos" />
-    <option name="LAST_COMMIT_MESSAGE" value="conectar codigo con base de datos" />
+    <MESSAGE value="envio del email al inscribir un participante y aplicar los fake objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="envio del email al inscribir un participante y aplicar los fake objects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
