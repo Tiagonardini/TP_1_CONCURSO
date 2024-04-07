@@ -20,4 +20,7 @@ public class Participante {
     public Integer id() {
         return this.ID;
     }
+    public String nombre(){
+        return this.nombre;
+    }
 }

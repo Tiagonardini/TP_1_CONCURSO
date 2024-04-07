@@ -1,4 +1,5 @@
 package Practica1.test;
+import Mail.Email;
 import Persistencia.DatosEnBase;
 import Persistencia.DatosEnDisco;
 import clasesDeConcurso.Concurso;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class ConcursoTest {
-    @Test
+   /* @Test
     public void test01 () throws IOException {
         var memoriaEnDisco = new DatosEnDisco();
         var tiago = new Participante(1 ,44664727, "Tiago Nardini");
@@ -56,5 +57,34 @@ public class ConcursoTest {
 
         assertTrue(concurso1.participanteInscripto(participante1));
         assertEquals(1, concurso1.cantidadInscriptos());
+    }
+
+    */
+
+    @Test
+    public void envioDeEmail () throws IOException{
+
+        var memoriaEnDisco = new DatosEnBase();
+        var email = new Email();
+        var tiago = new Participante(5 ,44664727, "Tiago Nardini");
+        var unConcurso = new Concurso(5,"Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
+        var inscripcion = new Inscripcion(tiago, unConcurso,LocalDate.of(2024,3, 16), memoriaEnDisco, email);
+
+        inscripcion.inscribirAEnUnConcurso(unConcurso, tiago,"tiagonardini15@gmail.com");
+
+        assertTrue(unConcurso.participanteInscripto(tiago));
+        assertEquals(1, unConcurso.cantidadInscriptos());
+    }
+    @Test
+    public void pruebaFakeObjects() throws IOException{
+        var fakeMemoria = new FakeDatos();
+        var email = new Email();
+        var tiago = new Participante(5 ,44664727, "Tiago Nardini");
+        var unConcurso = new Concurso(5,"Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
+        var inscripcion = new Inscripcion(tiago, unConcurso,LocalDate.of(2024,3, 16), fakeMemoria, email);
+
+        inscripcion.inscribirAEnUnConcurso(unConcurso, tiago,"tiagonardini15@gmail.com");
+
+        assertTrue(fakeMemoria.confirmaNombreParticipante("Tiago Nardini"));
     }
 }

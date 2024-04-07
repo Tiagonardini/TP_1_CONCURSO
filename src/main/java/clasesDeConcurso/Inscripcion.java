@@ -1,24 +1,30 @@
 package clasesDeConcurso;
 
+import Mail.Email;
 import Persistencia.PersistirDatos;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class Inscripcion {
     private Participante participante;
     private Concurso concurso;
     private final LocalDate fechaDeInscripcion;
     private PersistirDatos memoria;
-    public Inscripcion(Participante participante, Concurso concurso, LocalDate fechaDeInscripto, PersistirDatos memoria) {
+    private Email email;
+
+    public Inscripcion(Participante participante, Concurso concurso, LocalDate fechaDeInscripto, PersistirDatos memoria, Email email) {
         this.participante = participante;
         this.concurso = concurso;
         this.fechaDeInscripcion = fechaDeInscripto;
         this.memoria = memoria;
+        this.email = email;
 
     }
-    public void inscribirAEnUnConcurso (Concurso unConcurso, Participante unParticipante) throws IOException {
+    public void inscribirAEnUnConcurso (Concurso unConcurso, Participante unParticipante, String destinatario) throws IOException {
         if (!esFechaValidaParaInscripcion(unConcurso, fechaDeInscripcion)){
             throw new RuntimeException("Se encuentra fuera del periodo de Inscripcion");
         }
@@ -30,6 +36,9 @@ public class Inscripcion {
         System.out.print("La inscripcion se ha realizado con exito\n");
 
         memoria.guardar(unConcurso, unParticipante, this);
+
+        email.enviarCorreo(destinatario);
+
     }
     private boolean esFechaValidaParaInscripcion (Concurso unConcurso, LocalDate fechaDeInscripcion){
             return (!fechaDeInscripcion.isBefore(unConcurso.getFechaInicioDeInscripcion())) && (!fechaDeInscripcion.isAfter(unConcurso.getFechaFinDeInscripcion()));
