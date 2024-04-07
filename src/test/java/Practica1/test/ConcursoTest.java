@@ -66,8 +66,8 @@ public class ConcursoTest {
 
         var memoriaEnDisco = new DatosEnBase();
         var email = new Email();
-        var tiago = new Participante(5 ,44664727, "Tiago Nardini");
-        var unConcurso = new Concurso(5,"Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
+        var tiago = new Participante(10 ,44664727, "Tiago Nardini");
+        var unConcurso = new Concurso(10,"Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
         var inscripcion = new Inscripcion(tiago, unConcurso,LocalDate.of(2024,3, 16), memoriaEnDisco, email);
 
         inscripcion.inscribirAEnUnConcurso(unConcurso, tiago,"tiagonardini15@gmail.com");

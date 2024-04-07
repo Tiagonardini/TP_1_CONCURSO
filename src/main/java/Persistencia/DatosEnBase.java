@@ -1,5 +1,6 @@
 package Persistencia;
 
+import Mail.Email;
 import clasesDeConcurso.Concurso;
 import clasesDeConcurso.Inscripcion;
 import clasesDeConcurso.Participante;
@@ -17,7 +18,7 @@ public class DatosEnBase implements PersistirDatos{
 
 
     @Override
-    public void guardar(Concurso concurso, Participante participante, Inscripcion inscripcion) throws IOException {
+    public void guardar(Concurso concurso, Participante participante, Inscripcion inscripcion, Email email, String destinatario) throws IOException {
         try (Connection myConnection = DriverManager.getConnection(conexion, usuario, password)){
             String consulta = "INSERT INTO Inscripcion (ID_CONCURSO, ID_PARTICIPANTE, FECHA_INSCRIPCION) VALUES (?,?,?)";
             try (PreparedStatement sentencia = myConnection.prepareStatement(consulta)) {
@@ -25,6 +26,7 @@ public class DatosEnBase implements PersistirDatos{
                 sentencia.setInt(2, participante.id());
                 sentencia.setString(3, inscripcion.diaEnQueSeInscribio());
                 sentencia.executeUpdate();
+                email.enviarCorreo(destinatario);
             }
         }catch (SQLException e){
             e.printStackTrace();

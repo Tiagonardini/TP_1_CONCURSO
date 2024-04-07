@@ -35,9 +35,6 @@ public class Concurso {
     public LocalDate getFechaInicioDeInscripcion() {
         return fechaInicioDeInscripcion;
     }
-    public void setFechaInicioDeInscripcion(LocalDate fechaInicioDeInscripcion) {
-        this.fechaInicioDeInscripcion = fechaInicioDeInscripcion;
-    }
     public LocalDate getFechaFinDeInscripcion() {
         return fechaFinDeInscripcion;
     }

@@ -35,9 +35,9 @@ public class Inscripcion {
         unConcurso.nuevaInscripcion(this);
         System.out.print("La inscripcion se ha realizado con exito\n");
 
-        memoria.guardar(unConcurso, unParticipante, this);
+        memoria.guardar(unConcurso, unParticipante, this, email, destinatario);
 
-        email.enviarCorreo(destinatario);
+
 
     }
     private boolean esFechaValidaParaInscripcion (Concurso unConcurso, LocalDate fechaDeInscripcion){
