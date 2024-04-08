@@ -13,78 +13,38 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class ConcursoTest {
-   /* @Test
-    public void test01 () throws IOException {
-        var memoriaEnDisco = new DatosEnDisco();
-        var tiago = new Participante(1 ,44664727, "Tiago Nardini");
-        var unConcurso = new Concurso(1,"Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
-        var inscripcion = new Inscripcion(tiago, unConcurso,LocalDate.of(2024,3, 16), memoriaEnDisco);
-
-        inscripcion.inscribirAEnUnConcurso(unConcurso, tiago);
-
-        assertTrue(unConcurso.participanteInscripto(tiago));
-        assertEquals(1, unConcurso.cantidadInscriptos());
-    }
-
-    @Test
-    public void test02() throws IOException {
-        var memoriaEnDisco = new DatosEnDisco();
-        var participante2 = new Participante(2 ,44664727, "Julian Alvarez");
-        var unConcurso = new Concurso(2,"Concurso Camiseta de Boca", LocalDate.of(2024,3,17), LocalDate.of(2024, 4, 30));
-        var inscripcion = new Inscripcion(participante2, unConcurso,LocalDate.now(), memoriaEnDisco);
-
-        inscripcion.inscribirAEnUnConcurso(unConcurso, participante2);
-        assertTrue(unConcurso.participanteInscripto(participante2));
-        assertEquals(1, unConcurso.cantidadInscriptos());
-    }
-    @Test
-    public void test03() throws IOException {
-        var memoriaEnDisco = new DatosEnDisco();
-        var tiago = new Participante(3 ,44664727, "Tiago Nardini");
-        var unConcurso = new Concurso(3,"Concurso Camiseta de Boca", LocalDate.of(2024,3,20), LocalDate.of(2024, 3, 30));
-        var inscripcion = new Inscripcion(tiago, unConcurso, LocalDate.of(2024, 1, 2), memoriaEnDisco);
-        inscripcion.inscribirAEnUnConcurso(unConcurso, tiago);
-        assertFalse(unConcurso.participanteInscripto(tiago));
-        assertEquals(0, unConcurso.cantidadInscriptos());
-    }
-    @Test
-    public  void testConBase01() throws IOException {
-        var memoriaEnBase = new DatosEnBase();
-        var participante1 = new Participante(4, 24098732, "Juan Rodriguez");
-        var concurso1 = new Concurso(4, "Camiseta de Independiente", LocalDate.of(2024, 4, 1), LocalDate.of(2024, 4, 30));
-        var inscripcion = new Inscripcion(participante1, concurso1, LocalDate.now(), memoriaEnBase);
-        inscripcion.inscribirAEnUnConcurso(concurso1, participante1);
-
-        assertTrue(concurso1.participanteInscripto(participante1));
-        assertEquals(1, concurso1.cantidadInscriptos());
-    }
-
-    */
-
-    @Test
-    public void envioDeEmail () throws IOException{
-
-        var memoriaEnDisco = new DatosEnBase();
-        var email = new Email();
-        var tiago = new Participante(10 ,44664727, "Tiago Nardini");
-        var unConcurso = new Concurso(10,"Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
-        var inscripcion = new Inscripcion(tiago, unConcurso,LocalDate.of(2024,3, 16), memoriaEnDisco, email);
-
-        inscripcion.inscribirAEnUnConcurso(unConcurso, tiago,"tiagonardini15@gmail.com");
-
-        assertTrue(unConcurso.participanteInscripto(tiago));
-        assertEquals(1, unConcurso.cantidadInscriptos());
-    }
     @Test
     public void pruebaFakeObjects() throws IOException{
         var fakeMemoria = new FakeDatos();
+        var destinatario = "tiagonardini15@gmail.com";
         var email = new Email();
         var tiago = new Participante(5 ,44664727, "Tiago Nardini");
-        var unConcurso = new Concurso(5,"Concurso Camiseta de Boca", LocalDate.of(2024,3,16), LocalDate.of(2024, 3, 30));
-        var inscripcion = new Inscripcion(tiago, unConcurso,LocalDate.of(2024,3, 16), fakeMemoria, email);
+        var unConcurso = new Concurso(5,"Concurso Camiseta de Boca", LocalDate.of(2024,4,8), LocalDate.of(2024, 4, 30));
+        var inscripcion = new Inscripcion(fakeMemoria);
 
-        inscripcion.inscribirAEnUnConcurso(unConcurso, tiago,"tiagonardini15@gmail.com");
+        inscripcion.inscribirAEnUnConcurso(unConcurso, tiago,LocalDate.of(2024, 4, 8), destinatario);
 
-        assertTrue(fakeMemoria.confirmaNombreParticipante("Tiago Nardini"));
+        assertTrue(fakeMemoria.confirmarIdParticipante(5));
+    }
+
+    @Test
+    public void pruebaDeGuardarEnDisco() throws IOException {
+        var memoriaEnDisco = new DatosEnDisco();
+        String destinatario = "tiagonardini15@gmail.com";
+        var participante = new Participante(20,12345678 , "Juana Garcia");
+        var concurso = new Concurso(20, "Sorteo de chancho", LocalDate.of(2024,4,12), LocalDate.of(2024,5,1));
+        var inscripcion = new Inscripcion(memoriaEnDisco);
+
+        inscripcion.inscribirAEnUnConcurso(concurso, participante,LocalDate.of(2024,4,12), destinatario);
+    }
+    @Test
+    public void pruebaDeGuardarEnBaseDeDatos() throws IOException {
+        var memoriaEnBase = new DatosEnBase();
+        String destinatario = "tiagonardini15@gmail.com";
+        var participante = new Participante(20,12345678 , "Pepe Garcia");
+        var concurso = new Concurso(20, "Sorteo de chancho", LocalDate.of(2024,4,12), LocalDate.of(2024,5,1));
+        var inscripcion = new Inscripcion(memoriaEnBase);
+
+        inscripcion.inscribirAEnUnConcurso(concurso, participante,LocalDate.of(2024,4,12), destinatario);
     }
 }

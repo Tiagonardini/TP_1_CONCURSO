@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="204fa788-80a3-44c9-b15a-de3622e8b87c" name="Changes" comment="envio del email al inscribir un participante y aplicar los fake objects">
+    <list default="true" id="204fa788-80a3-44c9-b15a-de3622e8b87c" name="Changes" comment="envio del email al inscribir un participante y aplicar los fake objects 2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Mail/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mail/Email.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnDisco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Persistencia/DatosEnDisco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Persistencia/PersistirDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Persistencia/PersistirDatos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Inscripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clasesDeConcurso/Participante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Practica1/test/ConcursoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practica1/test/ConcursoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Practica1/test/FakeDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practica1/test/FakeDatos.java" afterDir="false" />
     </list>
@@ -35,6 +37,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="ConcursoTest.pruebaFakeObjects" />
+    </enabled-run-configurations>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -55,7 +62,9 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ConcursoTest.envioDeEmail.executor": "Run",
     "JUnit.ConcursoTest.executor": "Run",
-    "JUnit.ConcursoTest.pruebaFakeObjects.executor": "Debug",
+    "JUnit.ConcursoTest.pruebaDeGuardarEnBaseDeDatos.executor": "Run",
+    "JUnit.ConcursoTest.pruebaDeGuardarEnDisco.executor": "Run",
+    "JUnit.ConcursoTest.pruebaFakeObjects.executor": "Run",
     "JUnit.ConcursoTest.test01 (1).executor": "Run",
     "JUnit.ConcursoTest.test01.executor": "Run",
     "JUnit.ConcursoTest.test02 (1).executor": "Run",
@@ -83,7 +92,22 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ConcursoTest.pruebaFakeObjects">
+  <component name="RunManager" selected="JUnit.ConcursoTest.pruebaDeGuardarEnBaseDeDatos">
+    <configuration name="ConcursoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP_Concurso" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Practica1.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Practica1.test" />
+      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConcursoTest.envioDeEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TP_Concurso" />
       <extension name="coverage">
@@ -95,6 +119,38 @@
       <option name="PACKAGE_NAME" value="Practica1.test" />
       <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
       <option name="METHOD_NAME" value="envioDeEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcursoTest.pruebaDeGuardarEnBaseDeDatos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP_Concurso" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Practica1.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Practica1.test" />
+      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
+      <option name="METHOD_NAME" value="pruebaDeGuardarEnBaseDeDatos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcursoTest.pruebaDeGuardarEnDisco" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TP_Concurso" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Practica1.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Practica1.test" />
+      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
+      <option name="METHOD_NAME" value="pruebaDeGuardarEnDisco" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,61 +172,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConcursoTest.test02 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TP_Concurso" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Practica1.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Practica1.test" />
-      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
-      <option name="METHOD_NAME" value="test02" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConcursoTest.test03 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TP_Concurso" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Practica1.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Practica1.test" />
-      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
-      <option name="METHOD_NAME" value="test03" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConcursoTest.testConBase01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TP_Concurso" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Practica1.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Practica1.test" />
-      <option name="MAIN_CLASS_NAME" value="Practica1.test.ConcursoTest" />
-      <option name="METHOD_NAME" value="testConBase01" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ConcursoTest.pruebaDeGuardarEnBaseDeDatos" />
+        <item itemvalue="JUnit.ConcursoTest.pruebaDeGuardarEnDisco" />
         <item itemvalue="JUnit.ConcursoTest.pruebaFakeObjects" />
+        <item itemvalue="JUnit.ConcursoTest" />
         <item itemvalue="JUnit.ConcursoTest.envioDeEmail" />
-        <item itemvalue="JUnit.ConcursoTest.testConBase01" />
-        <item itemvalue="JUnit.ConcursoTest.test03 (1)" />
-        <item itemvalue="JUnit.ConcursoTest.test02 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +230,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712521747562</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="envio del email al inscribir un participante y aplicar los fake objects 2.0">
+      <option name="closed" value="true" />
+      <created>1712524442956</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712524442956</updated>
+    </task>
+    <task id="LOCAL-00006" summary="envio del email al inscribir un participante y aplicar los fake objects 2.0">
+      <option name="closed" value="true" />
+      <created>1712524455869</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712524455869</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +277,8 @@
     <MESSAGE value="agregar a notas de texto" />
     <MESSAGE value="conectar codigo con base de datos" />
     <MESSAGE value="envio del email al inscribir un participante y aplicar los fake objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="envio del email al inscribir un participante y aplicar los fake objects" />
+    <MESSAGE value="envio del email al inscribir un participante y aplicar los fake objects 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="envio del email al inscribir un participante y aplicar los fake objects 2.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -263,11 +288,6 @@
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/clasesDeConcurso/Concurso.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <breakpoint type="java-exception">
           <properties class="java.nio.file.NoSuchFileException" package="java.nio.file" />
           <option name="timeStamp" value="5" />
@@ -276,6 +296,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TP_1_CONCURSO$ConcursoTest_pruebaFakeObjects.ic" NAME="ConcursoTest.pruebaFakeObjects Coverage Results" MODIFIED="1712523467295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Practica1.test.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/TP_Concurso$ConcursoTest_test01.ic" NAME="ConcursoTest.test01 Coverage Results" MODIFIED="1710712562308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.*</FILTER>
     </SUITE>

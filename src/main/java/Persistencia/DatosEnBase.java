@@ -18,13 +18,13 @@ public class DatosEnBase implements PersistirDatos{
 
 
     @Override
-    public void guardar(Concurso concurso, Participante participante, Inscripcion inscripcion, Email email, String destinatario) throws IOException {
+    public void guardarDatosDeConcurso(Integer idConcuro, Integer idParticipante, Email email, String fechaDeInscripcion, String destinatario) throws IOException {
         try (Connection myConnection = DriverManager.getConnection(conexion, usuario, password)){
             String consulta = "INSERT INTO Inscripcion (ID_CONCURSO, ID_PARTICIPANTE, FECHA_INSCRIPCION) VALUES (?,?,?)";
             try (PreparedStatement sentencia = myConnection.prepareStatement(consulta)) {
-                sentencia.setInt(1, concurso.id());
-                sentencia.setInt(2, participante.id());
-                sentencia.setString(3, inscripcion.diaEnQueSeInscribio());
+                sentencia.setInt(1, idConcuro);
+                sentencia.setInt(2, idParticipante);
+                sentencia.setString(3, fechaDeInscripcion);
                 sentencia.executeUpdate();
                 email.enviarCorreo(destinatario);
             }

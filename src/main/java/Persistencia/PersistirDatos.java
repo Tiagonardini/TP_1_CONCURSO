@@ -8,6 +8,8 @@ import clasesDeConcurso.Participante;
 import java.io.IOException;
 
 public interface PersistirDatos {
-  void guardar(Concurso concurso, Participante participante, Inscripcion inscripcion, Email email, String destinatario) throws IOException;
+  void guardarDatosDeConcurso(Integer idConcuro, Integer idParticipante, Email email, String fechaDeInscripcion, String destinatario) throws IOException;
+
+
 
 }

@@ -7,9 +7,11 @@ import java.util.List;
 public class Concurso {
     private final Integer ID;
     private final String nombre;
-    private List<Inscripcion> inscriptos;
+    private List<Participante> inscriptos;
     private LocalDate fechaInicioDeInscripcion;
     private LocalDate fechaFinDeInscripcion;
+
+    private static final Integer PUNTOS_A_SUMAR = 10;
 
     public Concurso(Integer id, String nombre, LocalDate fechaInicio, LocalDate fechaFin) {
         this.ID = id;
@@ -19,15 +21,15 @@ public class Concurso {
         this.fechaFinDeInscripcion = fechaFin;
     }
     public boolean participanteInscripto(Participante participante) {
-        for (Inscripcion inscripcion : this.inscriptos) {
-            if (inscripcion.estaInscripto(participante)) {
+        for (Participante inscripto : this.inscriptos) {
+            if (inscripto.estaInscripto(participante)) {
                 return true;
             }
         }
         return false;
     }
-    public void nuevaInscripcion(Inscripcion inscripcion) {
-        this.inscriptos.add(inscripcion);
+    public void nuevaInscripcion(Participante participanteInscripto) {
+        this.inscriptos.add(participanteInscripto);
     }
     public int cantidadInscriptos() {
         return this.inscriptos.size();
@@ -41,5 +43,10 @@ public class Concurso {
 
     public Integer id() {
         return this.ID;
+    }
+
+    public void participanteGanaPuntos(Participante participante){
+        int puntosActuales = participante.puntos();
+        participante.setPuntos(puntosActuales += PUNTOS_A_SUMAR);
     }
 }

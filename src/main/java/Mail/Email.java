@@ -9,6 +9,7 @@ import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
 public class Email {
+
     private final String username = "bcf599f5e2bc79";
     private final String password = "b02d69d81e0d32";
     private final String host = "sandbox.smtp.mailtrap.io";

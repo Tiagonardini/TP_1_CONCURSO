@@ -12,8 +12,13 @@ public class Participante {
         this.nombre = nombre;
         this.puntosObtenidos = 0;
     }
-    public Integer modificarPuntaje(){
-       return this.puntosObtenidos +=10;
+
+
+    public Integer puntos(){
+       return this.puntosObtenidos;
+    }
+    public Integer setPuntos(Integer puntosGanados){
+        return this.puntosObtenidos = puntosGanados;
     }
 
 
@@ -22,5 +27,9 @@ public class Participante {
     }
     public String nombre(){
         return this.nombre;
+    }
+
+    public boolean estaInscripto(Participante participante) {
+        return this.equals(participante);
     }
 }

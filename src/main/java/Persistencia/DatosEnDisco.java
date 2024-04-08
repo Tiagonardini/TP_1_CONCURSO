@@ -9,12 +9,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDate;
 
 public class DatosEnDisco implements PersistirDatos {
-    public void guardar(Concurso concurso, Participante participante, Inscripcion inscripcion, Email email, String destinatario){
+
+    private String file = "/home/tiagonardini/TP2/archivo-concurso.txt";
+    public void guardarDatosDeConcurso(Integer idConcuro, Integer idParticipante, Email email, String fechaDeInscripcion, String destinatario){
         try {
-        String fechaIdParIdCon = inscripcion.diaEnQueSeInscribio() +"||"+ participante.id() + "||" + concurso.id() + "\n";
-            Files.write(Paths.get("/home/tiagonardini/TP2/archivo-concurso.txt"), fechaIdParIdCon.getBytes(), StandardOpenOption.APPEND);
+        String datosConcurso = fechaDeInscripcion+"||"+ idParticipante+ "||" + idConcuro + "\n";
+            Files.write(Paths.get(file), datosConcurso.getBytes(), StandardOpenOption.APPEND);
              email.enviarCorreo(destinatario);
         }catch (IOException e){
             throw new RuntimeException("No se pudo guardar", e);
